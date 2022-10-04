@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-maccatalyst</TargetFramework>
+    <RuntimeIdentifier>maccatalyst-x64</RuntimeIdentifier>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
+	<_LibMonoLinkMode>Static</_LibMonoLinkMode>
+	<_LibXamarinLinkMode>Static</_LibXamarinLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <EnableCodeSigning>false</EnableCodeSigning>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+ 		<PackageReference Include="SkiaSharp" Version="2.88.3" />
+ 		<PackageReference Include="SkiaSharp.Views" Version="2.88.3" />
+ 		<PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.3" />
+ 		<PackageReference Include="HarfBuzzSharp" Version="2.8.2.3" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="SkiaSharp" />
+		<None Remove="SkiaSharp.Views" />
+		<None Remove="SkiaSharp.HarfBuzz" />
+		<None Remove="HarfBuzzSharp" />
+	</ItemGroup>
+</Project>
